@@ -25,6 +25,7 @@ int main(int argv,char* argc[])
     optlen=sizeof(option);
     option=TRUE;
     setsockopt(ser_sock,SOL_SOCKET,SO_REUSEADDR,(void*)&option,optlen); // 获取要取址，设置不用
+    // SO_REUSEADDR 可以让Time-wait状态下的套接字端口号重新分配给新的套接字(默认为0)
 
     memset(&ser_adr,0,sizeof(ser_adr));
     ser_adr.sin_family=AF_INET;
